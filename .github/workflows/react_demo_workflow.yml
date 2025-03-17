@@ -4,6 +4,8 @@ jobs:
     test:
         runs-on: ubuntu-latest
         steps:
+            - name: output context
+              run: echo "${{toJson(github)}}"
             - name: Get code
               uses: actions/checkout@v3
             - name: Install NodeJS
@@ -18,6 +20,8 @@ jobs:
         needs: test
         runs-on: ubuntu-latest
         steps:
+            - name: output context
+              run: echo "${{toJson(github)}}"
             - name: Get code
               uses: actions/checkout@v3
             - name: Install NodeJS
